@@ -22,15 +22,21 @@ public class BlogForwardBB implements Serializable {
     private Blog blog;
     private Long bid;
 
+    
+    /**
+     * forwards you to specified blog 
+     * @param id of blog
+     * @return adress to blog.xhtml
+     */
     public String actionListener(Long id) {
         bid = id;
         return "blog?faces-redirect=true";
     }
     
-   /* public String forward(){
-        return "blog?faces-redirect=true";
-    }*/
-    
+    /**
+     * 
+     * @return returns blog from this BackingBean
+     */
     public Blog getBlog(){
         return MusikBlogg.INSTANCE.getBc().find(bid);
     }

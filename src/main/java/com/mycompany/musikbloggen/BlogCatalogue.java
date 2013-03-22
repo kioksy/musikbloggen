@@ -20,6 +20,11 @@ public final class BlogCatalogue extends AbstractDAO<Blog, Long> implements IDAO
     
     private static EntityManagerFactory emf;
 
+    /**
+     * 
+     * @param name persisten unit name
+     * @return New BlogCatalogue instance.
+     */
     static BlogCatalogue newInstance(String name) {
         return new BlogCatalogue(name);
     }
@@ -28,6 +33,11 @@ public final class BlogCatalogue extends AbstractDAO<Blog, Long> implements IDAO
         super(Blog.class, name);
     }
     
+    /**
+     * 
+     * @param name
+     * @return list of blogs with matching names
+     */
     public List<Blog> search(String name){        /////// skalll göras om så att namnet inte behöver stämma exakt för att hittas
         List<Blog> lb = new LinkedList<>();
         for(Blog b : getAll()){
@@ -40,6 +50,11 @@ public final class BlogCatalogue extends AbstractDAO<Blog, Long> implements IDAO
         return lb;
     }
     
+    /**
+     * 
+     * @param name
+     * @return blog with exact name
+     */
     public Blog find(String name){        /////// skalll göras om så att namnet inte behöver stämma exakt för att hittas
         for(Blog b : getAll()){
             if(b.getName().equals(name)){
@@ -49,6 +64,11 @@ public final class BlogCatalogue extends AbstractDAO<Blog, Long> implements IDAO
         return null;
     }
     
+    /**
+     * 
+     * @param email
+     * @return finds blog by email
+     */
     public Blog findByEmail(String email){        /////// skalll göras om så att namnet inte behöver stämma exakt för att hittas
         for(Blog b : getAll()){
             if(b.getOwner().getEmail().equals(email)){
@@ -58,6 +78,11 @@ public final class BlogCatalogue extends AbstractDAO<Blog, Long> implements IDAO
         return null;
     }
 
+    /**
+     * checks if blog blog with bname exists
+     * @param bname
+     * @return bool
+     */
     public Boolean containsName(String bname) {
         for(Blog b : getAll()){
             if(b.getName().equals(bname)){
@@ -67,6 +92,11 @@ public final class BlogCatalogue extends AbstractDAO<Blog, Long> implements IDAO
         return false;
     }
 
+    /**
+     * checks if email is already used in database
+     * @param email
+     * @return bool
+     */
     public boolean containsEmail(String email) {
         for(Blog b : getAll()){
             if(b.getOwner().getEmail().equals(email)){

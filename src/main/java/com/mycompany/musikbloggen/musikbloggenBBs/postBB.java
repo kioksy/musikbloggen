@@ -44,6 +44,12 @@ public class postBB implements Serializable{
         this.id = id;
         return "makepost?faces-redirect=true";
     }
+    
+    
+    /**
+     * creates and adds new post to blog
+     * @return forward adress
+     */
     public String confirmPost(){
         
         this.user = MusikBlogg.INSTANCE.getBc().find(id);

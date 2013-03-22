@@ -13,6 +13,9 @@ import java.util.logging.Logger;
  */
 public enum MusikBlogg {
     
+    /**
+     * INSTANCE of musikbloggen
+     */
     INSTANCE;
     private final BlogCatalogue bc = BlogCatalogue.newInstance("music_pu");
     private final QueryProcessor qp = new QueryProcessor("music_pu");
@@ -24,10 +27,18 @@ public enum MusikBlogg {
     }
 
 
+    /**
+     * 
+     * @return the blog catalogue
+     */
     public BlogCatalogue getBc() {
         return bc;
     }
 
+    /**
+     * 
+     * @return the queryProcessor
+     */
     public QueryProcessor getQp() {
         return qp;
     }

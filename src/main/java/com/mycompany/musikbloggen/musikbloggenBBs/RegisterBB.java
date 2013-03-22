@@ -69,6 +69,11 @@ public class RegisterBB implements Serializable {
     }
 
     
+    
+    /**
+     * adds a blog to blog catalogue
+     * @return forward adress
+     */
     public String addBlog(){
         Flash flash = FacesContext.getCurrentInstance().getExternalContext().getFlash();
         bname = (String) flash.get("bname");
@@ -106,6 +111,11 @@ public class RegisterBB implements Serializable {
     
     
     
+    /**
+     * tests to se if a url is valid
+     * @param s (url)
+     * @return bool
+     */
     private Boolean testUrl(String s){
         try {
             URL u = new URL (s); 

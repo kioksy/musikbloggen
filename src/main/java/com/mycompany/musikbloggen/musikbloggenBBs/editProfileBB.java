@@ -104,7 +104,10 @@ public class editProfileBB implements Serializable {
         this.isAdmin = admin;
     }
     
-    
+    /**
+     * prepares for editing profile
+     * @param id (blog)
+     */
     public void editProfile(Long id){
         
         this.id = id;
@@ -119,6 +122,10 @@ public class editProfileBB implements Serializable {
         
     }
     
+    /**
+     * edits profile
+     * @return forward adress
+     */
     public String confirmEditProfile(){
         
         this.blog = MusikBlogg.INSTANCE.getBc().find(this.id);

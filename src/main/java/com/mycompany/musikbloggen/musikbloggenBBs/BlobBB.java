@@ -24,6 +24,11 @@ public class BlobBB implements Serializable{
     
     private Long id;
     
+    
+    /**
+     * 
+     * @return list of all blogs
+     */
     @Inject
     public List<Blog> getAll(){
         List<Blog> reversed = BlogCatalogueBean.getAll();
@@ -31,6 +36,10 @@ public class BlobBB implements Serializable{
         return reversed;
     }
     
+    /**
+     * 
+     * @return returns 8 latest created blogs
+     */
     @Inject
     public List<Blog> getLatestOwners(){
         List<Blog> reversed = BlogCatalogueBean.getCount(0,8);

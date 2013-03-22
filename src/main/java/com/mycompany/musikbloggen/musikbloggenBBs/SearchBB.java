@@ -32,11 +32,16 @@ public class SearchBB implements Serializable{
             
         }
     
+        /**
+         * 
+         * @return list of posts
+         */
         @Inject
         public List<Post> getSearchResult(){
         List<Post> posts = MusikBlogg.INSTANCE.getQp().getSearch(getInput);
         return posts; 
         }
+        
         
         public String makeSearch(){
             Flash flash = FacesContext.getCurrentInstance().getExternalContext().getFlash();

@@ -36,10 +36,15 @@ public class postForwardBB implements Serializable{
         return views;
     }
 
+    /**
+     * forwards you to big version of post
+     * @param post
+     * @return forward adress
+     */
     public String actionListener(Post post) {
         this.post = post;
         this.postedBy = MusikBlogg.INSTANCE.getBc().find(post.getBlogerId());
-        MusikBlogg.INSTANCE.getQp().incViews(post.getId());
+        this.post.incViews();
         return "bigpost?faces-redirect=true";
 
     }

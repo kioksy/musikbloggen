@@ -28,7 +28,12 @@ public class QueryProcessor {
         emf = Persistence.createEntityManagerFactory(s);
     }
     
-     public List<Post> getLatestLists(int nrOfLists){
+    /**
+     * returns a list of n nr of the latest posts that has a spotify uri
+     * @param nrOfLists n
+     * @return list of posts with size n
+     */
+    public List<Post> getLatestLists(int nrOfLists){
         EntityManager em = emf.createEntityManager();
         String s;
         s = "SELECT p from Post p WHERE p.hasUri=:id ORDER BY p.id DESC";
@@ -38,7 +43,12 @@ public class QueryProcessor {
         return posts;
     }
      
-     public List<Post> getLatestBlogPosts(int nrOfPosts){
+    /**
+     * returns a list of n nr of the latest posts that dont have a spotify uri
+     * @param nrOfLists n
+     * @return list of posts with size n
+     */
+    public List<Post> getLatestBlogPosts(int nrOfPosts){
         EntityManager em = emf.createEntityManager();
         String s;
         s = "SELECT p from Post p WHERE p.hasUri=:id ORDER BY p.id DESC";
@@ -48,6 +58,11 @@ public class QueryProcessor {
         return posts;
      }
      
+    /**
+     * 
+     * @param input sting
+     * @return post with exakt name as input
+     */
      public List<Post> getSearch(String input){
         EntityManager em = emf.createEntityManager();
         String s;
@@ -57,6 +72,11 @@ public class QueryProcessor {
         return posts;
      }
      
+     /**
+      * gets all posts with spotify uri in order of most views ( descending)
+      * @param nrOfPosts
+      * @return 
+      */
      public List<Post> getTopPosts(int nrOfPosts){
         EntityManager em = emf.createEntityManager();
         String s;
@@ -66,23 +86,5 @@ public class QueryProcessor {
         posts = posts.subList(0, ((posts.size() <= nrOfPosts) ? posts.size() : nrOfPosts));
         return posts;
      }
-     
-     public void incViews(Long postId){
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
-        em.createQuery("UPDATE Post p SET p.views=p.views+1 WHERE p.id = :pid")
-                            .setParameter("pid", postId)
-                            .executeUpdate();
-        em.getTransaction().commit();
-     }
    
-      public void deletePost(Long postId){
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
-        em.createQuery("DELETE FROM Post q WHERE q.id = :qpid")
-                            .setParameter("qpid", postId)
-                            .executeUpdate();
-        em.getTransaction().commit();
-     }
-    
 }
