@@ -79,8 +79,8 @@ AbstractDAO couldn't handle.
 The strongest part with MusikBloggen is that we made a really beautiful integration between spotify lists and the website.
 Just by adding a spotify uri to your post you can add post name and description and get all this in a really nice view.
 
-Bad parts: Since this is only in alpha stage you can't edit or delete any blog or posts. You can also only search for a
-post (you must type the name of the post correctly) and not bloggers.
+Bad parts: Since this is only in alpha stage you can't delete any blog or posts, you can also not edit any posts. You can also only search for a
+post (you must type the name of the post correctly) and not search for bloggers. Theese are also the parts we would have fixed for a beta stage.
 
 ##Javadoc
 We also included javadoc for easier understanding of the classes
