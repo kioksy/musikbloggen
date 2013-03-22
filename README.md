@@ -37,7 +37,6 @@ Since this is only in alpha-stage there is only simple bloggers and no admins. E
 - Check toplistor (only posts with spotify uri should end up here)
 - Search (only for posts in alpha)
 - Checkout bigPost by clicking i post.
-- Delete post
 
 
 
