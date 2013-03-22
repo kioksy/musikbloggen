@@ -42,34 +42,34 @@ Since this is only in alpha-stage there is only simple bloggers and no admins. E
 ##Technical info
 
 ####webpages + helpers
--- HTML5 structure (XHTML pages)
--- CSS
--- some javascript
+- HTML5 structure (XHTML pages)
+- CSS
+- some javascript
 In theese pages you get the front-end part of the webpage
 
 ####com.mycompany.musikbloggen
 here we have our main javafiles.
 
--- AbstractDAO.java: Is our abstract data access object which handles methods like add, delete, find, getall etc.
--- IDAO.java: Interface for the data access object
--- Blog.java: object for a blog
--- BlogCatalogue.java: Script for storing all blogs
--- MusikBlogg.java: Creates singletons of Blogcatalogue and queryprocessor
--- Owner.java: object for an owner of a blog
--- Post.java: object for a blogpost
--- QueryProcessor.java: Here we created some querys with SQL that our AbstractDAO couldn't handle.
+- AbstractDAO.java: Is our abstract data access object which handles methods like add, delete, find, getall etc.
+- IDAO.java: Interface for the data access object
+- Blog.java: object for a blog
+- BlogCatalogue.java: Script for storing all blogs
+- MusikBlogg.java: Creates singletons of Blogcatalogue and queryprocessor
+- Owner.java: object for an owner of a blog
+- Post.java: object for a blogpost
+- QueryProcessor.java: Here we created some querys with SQL that our AbstractDAO couldn't handle.
 
 ####com.mycompany.musikbloggenBBs
 We choosed to use backing beans and each bean solves a smaller problem.
 
--- BlobBB.java : backing bean for getting all blogs and also getting latest members.
--- BlogCatalogueBean.java: getting latest blogs and also posibility for special interval.
--- BlogForwardBB.java: forwarding bean with actionlistener to find clicked blog.
--- LoginBB.java: bean that handles login part.
--- RegisterBB.java : handles the registration on the page.
--- SearchBB.java : handles searching on the site.
--- editProfileBB.java: handles all profile changes a bloger does.
--- PostBB.java : handles a blog post.
--- PostForwardBB.java: forwarding bean with actionlistener to find clicked post.
+- BlobBB.java : backing bean for getting all blogs and also getting latest members.
+- BlogCatalogueBean.java: getting latest blogs and also posibility for special interval.
+- BlogForwardBB.java: forwarding bean with actionlistener to find clicked blog.
+- LoginBB.java: bean that handles login part.
+- RegisterBB.java : handles the registration on the page.
+- SearchBB.java : handles searching on the site.
+- editProfileBB.java: handles all profile changes a bloger does.
+- PostBB.java : handles a blog post.
+- PostForwardBB.java: forwarding bean with actionlistener to find clicked post.
 
 
