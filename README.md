@@ -75,5 +75,12 @@ We choosed to use backing beans and each bean solves a smaller problem.
 All our inserts are handeld with JDBC but we have also used som plain SQL for presenting different results that our
 AbstractDAO couldn't handle.
 
+##Strong and week parts
+The strongest part with MusikBloggen is that we made a really beautiful integration between spotify lists and the website.
+Just by adding a spotify uri to your post you can add post name and description and get all this in a really nice view.
+
+Bad parts: Since this is only in alpha stage you can't edit or delete any blog or posts. You can also only search for a
+post (you must type the name of the post correctly) and not bloggers.
+
 ##Javadoc
 We also included javadoc for easier understanding of the classes
