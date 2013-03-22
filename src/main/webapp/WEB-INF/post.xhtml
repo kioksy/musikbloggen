@@ -1,0 +1,35 @@
+<ui:composition  
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+    <h:form>
+        <div style="float: left">
+            <article class="moreNews">
+                <div style="float: left; padding-right: 10px">
+                    <c:if test="#{thispost.hasUri()}">
+                        <iframe src="#{thispost.player}" width="80" height="80" frameborder="0" allowtransparency="true"></iframe>
+
+                    </c:if>
+                </div>
+                <div>
+                        <header>
+                            <c:if test="#{login.me(thispost.blogerId)}">
+                                <h:commandLink value="x" action="#{post.deletePost(thispost)}" onclick="alert('Inlägget är nu borttaget');" style="float:right;"/>
+                            </c:if>
+                            <h:commandLink action="#{postForward.actionListener(thispost)}" >
+                                <h1>
+                                    <h:outputText value="#{thispost.title}" />
+                                </h1>
+                            </h:commandLink>
+                        </header>
+                        <p>
+                            <h:outputText value="#{thispost.content}"/>
+                        </p>
+
+                </div>
+            </article>
+        </div>
+    </h:form>
+</ui:composition>

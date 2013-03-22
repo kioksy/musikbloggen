@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:c="http://java.sun.com/jsp/jstl/core"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html">
+<head>
+    <link href="client/CSS/syle.css" rel="Stylesheet" type="text/css" />
+            <script type="text/javascript" src="client/js/lib/jquery-1.8.1.min.js"></script>
+        <script type="text/javascript" src="client/js/gui/sitefunctions.js"></script>
+    <title>Ny användare</title>
+</head>
+<body>
+    <ui:include src="WEB-INF/header.xhtml" />
+    <div id="mainWrapper">
+        <div id="mainContent">
+            <section class="mainBar">
+                <div class="mainBarHead"><h1>Nytt Inlägg</h1></div>
+                <div class="mainBarContent">
+                        <h:form>
+                            Titel:<br />
+                                    
+                                        <h:inputText label="title"
+                                                     id="title" value="#{flash.title}"
+                                                     styleClass="mainBarInput"
+                                                     required="true" /><br /><br />
+                                        <h:message for="title" />
+                            Innehåll:<br />
+                                    
+                                        <h:inputTextarea label="content"
+                                                     id="content" value="#{flash.content}"
+                                                     class="mainBarTextArea"
+                                                     required="true"/><br /><br />
+                                        <h:message for="content" />
+                                        
+                           Playlist uri:<br />
+                                    
+                                        <h:inputText label="uri"
+                                                     id="uri" value="#{flash.uri}"
+                                                     styleClass="mainBarInput"
+                                                     required="false"/><br /><br />
+                                        <h:message for="uri" />
+                                        <h:inputHidden value="#{post.id}"/>
+                            <p>
+                                <h:commandButton value="Skapa inlägget" styleClass="mainConfirm" action="#{post.confirmPost()}"></h:commandButton>
+                            </p>
+                        </h:form>
+                </div>
+            </section>
+        </div>
+
+        <ui:include src="WEB-INF/rightBar.xhtml" />
+        <ui:include src="WEB-INF/footer.xhtml" />
+    </div>
+</body>
+</html>

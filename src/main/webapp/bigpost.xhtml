@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+   <head>
+        <link href="client/CSS/syle.css" rel="Stylesheet" type="text/css" />
+        <script type="text/javascript" src="client/js/lib/jquery-1.8.1.min.js"></script>
+        <script type="text/javascript" src="client/js/gui/sitefunctions.js"></script>
+        <title>Bloggar</title>
+    </head>
+    <body>
+         <ui:include src="WEB-INF/header.xhtml" />
+         
+         <div id="mainWrapper">
+                    <section class="mainBar">
+                        <h:form var="post" value="#{postForward.post}" >
+                            <div class="mainBarContent">
+                                <article class="moreNews">
+                                    <header>
+                                       <h1>
+                                           <h:outputText value="#{postForward.post.title}" />
+                                       </h1>
+                                    </header>
+                                    <p>
+                                        <h:outputText value="#{postForward.post.content}" />
+                                    </p>
+                                    <br />
+
+                                   <c:if test="#{postForward.post.hasUri()}" >
+                                        <p>
+                                            <iframe src="#{postForward.post.player}" width="630" height="720" frameborder="0" allowtransparency="true"></iframe> 
+                                        </p>
+                                    </c:if>
+                                </article>
+                                <p><h:outputText value="#{postForward.postedBy.name}" /> - <h:outputText value="#{postForward.post.created}" /></p>
+                            </div>
+                        </h:form>
+                    </section>
+             <ui:include src="WEB-INF/rightBar.xhtml" />
+             <ui:include src="WEB-INF/footer.xhtml" />
+          </div>
+         
+    </body>
+</html>
+

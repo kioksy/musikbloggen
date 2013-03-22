@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+   <head>
+        <link href="client/CSS/syle.css" rel="Stylesheet" type="text/css" />
+        <script type="text/javascript" src="client/js/lib/jquery-1.8.1.min.js"></script>
+        <script type="text/javascript" src="client/js/gui/sitefunctions.js"></script>
+        <title>Bloggar</title>
+    </head>
+    <body>
+         <ui:include src="WEB-INF/header.xhtml" />
+         <div id="mainWrapper">
+             <div id="mainContent">
+             <section class="mainBar">
+                 <div class="mainBarHead">Om oss</div>
+                 <div class="mainBarContent">
+                     <article class="moreNews">
+                         <header>
+                            <h1>MusikBloggen</h1>
+                         </header>
+                         <p>
+                         Den här sidan är ett projekt i kursen Web-applikationer (Dat076), 7,5 hp
+                         och är gjord av:
+                         <br/><br/>
+                         Antonios Kioksoglou - 8906024875 - antkio@student.chalmers.se
+                         <br />
+                         och
+                         <br />
+                         Anton Kloek - 9003255875 - kloek@student.chalmers.se
+                         </p>
+                     </article>
+                    
+                 </div>
+             </section>
+             </div>
+          <ui:include src="WEB-INF/rightBar.xhtml" />
+         <ui:include src="WEB-INF/footer.xhtml" />
+         </div>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<ui:composition  
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+    
+    <h:form>
+                    <div class="mainBar">
+                            
+                        <div class="mainBarHead">
+                            <h:commandLink action="#{blogForward.actionListener(blog.id)}">
+                                <h1>
+                                    <h:outputText value="#{blog.name}"/>
+                                    <c:if test="#{login.me(blog.id)}">
+                                        <h:commandLink value="Edit Profile" actionListener="#{editProfile.editProfile(blog.id)}" action="editprofile" style="float: right" />
+                                    </c:if>
+                                    
+                                </h1>
+                            </h:commandLink>
+                        </div>
+                        <div class="mainBarContent">
+                            <header>
+                                <img src="#{blog.owner.profilePic}" width="140" style="float:left; margin: 0px 5px 5px 0px"/>
+                            </header>
+                            <p>
+                                <b style="margin-right:10px;">Owner:</b> <h:outputText value="#{blog.owner.firstName}"/><h:outputText value="&#160;" />
+                                <h:outputText value="#{blog.owner.lastName}"/> <br /><br/>
+                                <b style="margin-right:10px;">Description:</b><h:outputText value="#{blog.description}"/><br /><br />
+                                <b style="margin-right:10px;">Joined:</b> <h:outputText value="#{blog.created}"/><br /><br />
+                                <b style="margin-right:10px;">Total Posts:</b> <h:outputText value="#{blog.nrOfPosts}"/>
+                            </p>
+                        </div>
+                    </div>
+    </h:form>
+</ui:composition>

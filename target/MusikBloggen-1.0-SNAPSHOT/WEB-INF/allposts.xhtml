@@ -1,0 +1,26 @@
+<ui:composition  
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+    
+    
+    <h:form>
+        <div class="mainBarHead">
+            <h1>
+                Blogginlägg
+                <c:if test="#{login.me(blog.id)}">
+                    <h:commandLink value="Skapa inlägg" actionListener="#{post.makePost(login.blog.id)}" action="makepost" style="float: right" />
+                </c:if>
+            </h1>
+        </div>
+    </h:form>
+    <div class="mainBarContent">
+            <c:forEach items="#{blog.posts}" var="onepost">
+                <ui:include src="post.xhtml">
+                    <ui:param value="#{onepost}" name="thispost" />
+                </ui:include>
+            </c:forEach>
+    </div>
+</ui:composition>

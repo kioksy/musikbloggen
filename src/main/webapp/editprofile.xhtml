@@ -1,0 +1,108 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:c="http://java.sun.com/jsp/jstl/core"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html">
+<head>
+    <link href="client/CSS/syle.css" rel="Stylesheet" type="text/css" />
+            <script type="text/javascript" src="client/js/lib/jquery-1.8.1.min.js"></script>
+        <script type="text/javascript" src="client/js/gui/sitefunctions.js"></script>
+    <title>Ny användare</title>
+</head>
+<body>
+    <ui:include src="WEB-INF/header.xhtml" />
+    <div id="mainWrapper">
+        <div id="mainContent">
+            <section class="mainBar">
+                <div class="mainBarHead"><h1>Ändra Profilinfo</h1></div>
+                <div class="mainBarContent">
+                        <article class="moreNews">
+                        <h:form>
+
+                            Bloggnamn:<br />
+                                    
+                                        <h:inputText label="bname"
+                                                     id="bname" value="#{editProfile.name}"
+                                                     styleClass="mainBarInput"
+                                                     required="true"/><br /><br />
+                                        <h:message for="bname" />
+                            Förnamn:<br />
+                                    
+                                        <h:inputText label="fname"
+                                                     id="fname" value="#{editProfile.firstName}"
+                                                     styleClass="mainBarInput"
+                                                     required="false"/><br /><br />
+                                        <h:message for="fname" />
+                                    
+
+                            Efternamn:<br />
+                                  
+                                        <h:inputText label="ename"
+                                                     id="ename" value="#{editProfile.lastName}"
+                                                     styleClass="mainBarInput"
+                                                     required="false"/><br /><br />
+                                        <h:message for="ename" />
+                                        
+                            Bild:<br />
+                                  
+                                        <h:inputText label="pic"
+                                                     id="pic" value="#{editProfile.image}"
+                                                     styleClass="mainBarInput"
+                                                     required="false"/><br /><br />
+                                        <h:message for="ename" />
+                                       
+                                        
+                            Beskrivning:<br />
+                                    
+                                        <h:inputTextarea label="description"
+                                                         id="description" value="#{editProfile.description}"
+                                                     class="mainBarTextArea"
+                                                     required="false"/><br /><br />
+                                        <h:message for="description" />
+                                        
+                                        <h:inputHidden value="#{editProfile.id}"/>
+                                <p>
+                                    <h:commandButton value="UPPDATERA PROFIL" styleClass="mainConfirm" action="#{editProfile.confirmEditProfile()}"></h:commandButton>
+                                </p>
+                        </h:form>
+                    </article>
+                    <article class="moreNews">
+                        <h:form>
+                            Nytt Lösenord:<br />
+                                
+                                        <h:inputSecret label="password"
+                                                     id="password" value="#{flash.password}"
+                                                     styleClass="mainBarInput"
+                                                     required="true"/><br /><br />
+                                        <h:message for="password" />      
+
+                            Upprepa Nytt Lösenord:<br />
+                                
+                                        <h:inputSecret label="password2"
+                                                     id="password2" value="#{flash.password2}"
+                                                     styleClass="mainBarInput"
+                                                     required="true"/><br /><br />
+                                        <h:message for="password2" />
+                            Gammalt Lösenord:<br />
+                                
+                                        <h:inputSecret label="passwordold"
+                                                     id="passwordold" value="#{flash.passwordold}"
+                                                     styleClass="mainBarInput"
+                                                     required="true"/><br /><br />
+                                        <h:message for="passwordold" />
+                                        
+                                        <h:inputHidden value="#{editProfile.id}"/>
+                            <p>
+                                    <h:commandButton value="BYT LÖSENORD" styleClass="mainConfirm" action="#{editProfile.confirmEditProfile()}"></h:commandButton>
+                            </p>
+                        </h:form>
+                     </article>
+                </div>
+            </section>
+        </div>
+
+        <ui:include src="WEB-INF/rightBar.xhtml" />
+        <ui:include src="WEB-INF/footer.xhtml" />
+    </div>
+</body>
+</html>

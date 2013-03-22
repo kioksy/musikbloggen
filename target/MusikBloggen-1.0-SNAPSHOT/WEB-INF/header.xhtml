@@ -1,0 +1,39 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html">
+    
+    <header>
+        <section id="head">
+        <hgroup>
+            <h1>MusikBloggen</h1>
+        </hgroup>
+            <h:form id="searchbox">
+        <h:inputText id="search" value="#{flash.keep.input}"></h:inputText>
+        <h:commandButton styleClass="searchSubmit" value="Sök" action="#{search.makeSearch()}"></h:commandButton>
+        </h:form>
+        </section>
+          
+    </header>
+    <nav id="main">
+            <ul>
+                <h:form>
+                    <li><h:commandLink value="Start" action="index?faces-redirect=true" /></li>
+                    <li><h:commandLink value="Bloggar" action="bloggar?faces-redirect=true" /></li>
+                    <li><h:commandLink value="Topplistor" action="topposts?faces-redirect=true"/></li>
+                    <li><h:commandLink value="Om Oss" action="about?faces-redirect=true" /></li>
+                </h:form>    
+            </ul>
+              <ul class="rightNav">
+                  <h:form>
+                      <li>
+                          <h:commandLink value="#{login.registerBtnTxt()}" action="#{login.registerBtnAction()}" />
+
+                      </li>
+                      <li>
+                          <h:commandLink value="#{login.signinBtnTxt()}" action="#{login.signinBtnAction()}" />
+                      </li>
+                   </h:form>
+              </ul>
+            </nav>
+</ui:composition>

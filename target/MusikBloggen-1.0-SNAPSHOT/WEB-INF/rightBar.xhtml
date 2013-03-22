@@ -1,0 +1,45 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:h="http://java.sun.com/jsf/html">
+<aside id="rightContent">
+             <section class="rightBar">
+                     <div class="rightBarHead">Redaktionens Lista</div>
+                     <iframe src="https://embed.spotify.com/?uri=spotify:user:kookio:playlist:2bbj4M1SgOcyfJsssgIgfl" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+           </section>
+    
+               <section class="rightBar">
+                 <div class="rightBarHead">Nya Spellistor</div>
+                 <div class="rightBarContent">
+                     <c:forEach var="thislist" items="${post.latestLists}">
+                            <div class="newMember">
+                                <h:form>
+                                <h:commandLink action="#{postForward.actionListener(thislist)}">
+                                    <h:outputText value="#{thislist.title}" />
+                                </h:commandLink>
+                                </h:form>
+                            </div> 
+                        </c:forEach>
+
+                 </div>
+                 </section>
+    
+                  <section class="rightBar">
+                 <div class="rightBarHead">Nya Blogginlägg</div>
+                 <div class="rightBarContent">
+                     <c:forEach var="thislist" items="${post.latestPosts}">
+                            <div class="newMember">
+                                <h:form>
+                                <h:commandLink action="#{postForward.actionListener(thislist)}">
+                                    <h:outputText value="#{thislist.title}" />
+                                </h:commandLink>
+                                </h:form>
+                            </div> 
+                        </c:forEach>
+
+                 </div>
+                 </section>
+             
+         </aside>
+</ui:composition> 

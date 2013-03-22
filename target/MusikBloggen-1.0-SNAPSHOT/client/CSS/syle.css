@@ -1,0 +1,258 @@
+/* 
+    Document   : syle
+    Created on : Oct 16, 2012, 2:44:13 PM
+    Author     : ante89
+    Description:
+        Purpose of the stylesheet follows.
+*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, font, img, ins, kbd, q, samp, small, strong, sub, sup, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, header, nav, article, aside, footer, hgroup, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	text-decoration: none;
+}
+
+header, nav, article, aside, footer, hgroup, section { display: block }
+
+@font-face {
+	font-family: cool_font;
+	src: url('BebasNeue.otf');
+}
+
+h1{
+    font-family:cool_font, "Helvetica Neue", Helvetica;
+    font-size:20px;
+    font-weight:bold;
+    letter-spacing: 1.2px;
+}
+p{
+   font-family:"Helvetica Neue", Helvetica, Arial;
+   font-size: 14px;   
+}
+
+a:link,a:visited {
+    font-family: cool_font, Helvetica;
+    font-size: 20px;
+    color: #fff;
+}
+
+
+body{
+   background-image: url('../design/background.jpg');
+   background-repeat: no-repeat;
+   background-color:#bcbdbe;
+   background-attachment:fixed;
+   background-position:top center;
+   margin:0 auto;
+   font-family: "Helvetica Neue", Helvetica, Arial;
+   color:#fff;
+   font-size:14px;
+   width:980px;
+}
+
+#mainWrapper{
+    width:980px; 
+    min-height:400px; 
+    padding: 60px 0px;
+}
+
+#head{
+   background-image:url('../design/banner.jpg');
+   background-repeat:no-repeat;
+   width:960px;
+   height:80px;
+   padding: 0 10px 0 10px;
+}
+hgroup{
+   float:left;
+   max-width:600px;
+   margin: 20px 0px 0px 40px;
+}
+hgroup h1{
+   font-family:cool_font, Helvetica;
+   font-size:36px;
+   font-weight: bold;
+   color:#fff;
+}
+nav#main{
+    position: absolute;
+    top: 80px;
+    width:960px;
+    height:40px;
+    padding: 0px 10px 0px 10px;
+    background-color:#0197cf;
+    font-family:cool_font;
+    z-index:9999;
+}
+nav#main ul{
+   height:40px;
+   float:left;
+}
+nav#main ul li { position: relative; display: inline }
+nav#main ul li a {
+    font-size: 24px;
+    display: block;
+    float: left;
+    line-height: 40px;
+    padding: 0 15px;
+    color: #fff;
+}
+nav#main ul.rightNav{
+   height:40px;
+   float:right;
+}
+#mainContent{
+    width:650px;
+    float:left;
+    font-family:cool_font, Helvetica;
+    color:#fff;
+    font-size:18px;
+}
+.mainBar{
+    width:650px;
+    margin-bottom:20px;
+    float:left;
+}
+.mainBarHead{
+    width:630px;
+    padding:10px;
+    background-color:#0197cf;
+    float:left;
+}
+.mainBarContent{
+   background:rgba(34,34,34,0.7);
+   width:630px;
+   padding:10px;
+   float:left;
+}
+.mainBarInput{
+    width:630px;
+    padding:10px;
+    font-size:20px;
+    font-family:cool_font, Helvetica;
+    color:#000;
+}
+.mainBarTextArea{
+    width:630px;
+    padding:10px;
+    min-height:200px;
+    font-family: cool_font, Helvetica;
+    font-size:16px;
+    resize:vertical;
+    color:#000;
+}
+.mainConfirm{
+    width:180px;
+    padding:10px;
+    color:#ffffff;
+    background-color:#0197cf;
+    border:0px;
+}
+.newMember{
+    width:147px;
+    float:left;
+    padding:10px 10px 10px 0px;
+}
+.newMember a{
+    color:#fff;
+}
+.newMember img{
+    height:147px;
+    width:147px;
+    border:0;
+}
+.moreNews{
+   width:630px; 
+   float:left; 
+   padding-bottom:10px; 
+   margin-bottom:10px; 
+   border-bottom:1px solid #ccc;
+}
+.moreNews a{
+   font-family:"Helvetica Neue", Helvetica, Arial;
+   font-size:14px;
+}
+.moreNews h1{
+   font-family: cool_font, Helvetica;
+   font-size:30px;
+   font-weight:bold;
+   color:#FFF;
+}
+#rightContent{
+    width:300px;
+    float:right;
+    font-family:cool_font;
+    font-size:18px;
+}
+.rightBar{
+    width:300px;
+    float:right;
+    margin-bottom:20px;
+}
+.rightBarHead{
+    width:290px;
+    padding:5px;
+    background-color:#0197cf;
+    color:#FFF;
+}
+.rightBarContent{
+    background:rgba(34,34,34,0.7);
+    width:290px;
+    padding:5px;
+    float:left;
+}
+/******** SEARCH BOX *****************/
+
+#searchbox{
+   width:200px;
+   float:right;
+   margin:20px 20px 0px 0px; 
+   font-family:cool_font, Helvetica;
+}
+#searchbox input[type=text]{
+  width:150px;
+  padding-top:10px;
+  padding-bottom:10px;
+  border:0px;
+}
+#searchbox input[type=submit]{
+  padding:10px;
+  margin:0px;
+  color:#ffffff;
+  background-color:#0197cf;
+  border:0px;
+}
+.searchSubmit {
+  padding:10px;
+  margin:0px;
+  color:#ffffff;
+  background-color:#0197cf;
+  border:0px;
+}
+
+/******** ** * * FOOOTER ** * * **  **  **/
+
+.footer{
+   background:rgba(34,34,34,0.85);
+   width:960px;
+   padding:10px;
+   float:left;
+   margin-bottom:20px;
+}
+
+
+
+/**** COIN SLIDER ******/
+.coin-slider { overflow: hidden; zoom: 1; position: relative; float:left; margin-bottom:20px; }
+.coin-slider a{ text-decoration: none; outline: none; border: none; }
+
+.cs-buttons { font-size: 0px; padding: 10px; float: left; margin-top:-30px; }
+.cs-buttons a { margin-left: 5px; height: 10px; width: 10px; float: left; border: 1px solid #0197cf; color: #0197cf; text-indent: -1000px; }
+.cs-active { background-color: #B8C4CF; color: #FFFFFF; }
+
+.cs-title { min-width: 300px; padding: 10px; margin:0px 0px 30px 0px; background-color: #0197cf; color: #FFFFFF; font-family:cool_font; font-size:22px; font-weight:bold; }
+
+.cs-prev, 
+.cs-next { background-color: #0197cf; color: #FFFFFF; padding: 0px 10px; visibility: hidden; }
+/****** COIN SLIDER END ********/

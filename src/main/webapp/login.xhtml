@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:c="http://java.sun.com/jsp/jstl/core"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html">
+<head>
+    <link href="client/CSS/syle.css" rel="Stylesheet" type="text/css" />
+        <script type="text/javascript" src="client/js/lib/jquery-1.8.1.min.js"></script>
+        <script type="text/javascript" src="client/js/gui/sitefunctions.js"></script>
+        <title>Logga In</title>
+</head>
+<body>
+    <ui:include src="WEB-INF/header.xhtml" />
+    <div id="mainWrapper">
+        <div id="mainContent">
+            <section class="mainBar">
+                <div class="mainBarHead"><h1>Logga in:</h1></div>
+                <div class="mainBarContent">
+                    <article class="moreNews">
+                        <h:form>
+                            Email:<br />
+                                        <h:inputText label="email"
+                                                     id="email" value="#{flash.keep.email}"
+                                                     styleClass="mainBarInput"
+                                                     required="true"/><br /><br />
+                                        <h:message for="email" />
+                            Lösenord:<br />
+                                
+                                        <h:inputSecret label="password"
+                                                     id="password" value="#{flash.keep.password}"
+                                                     styleClass="mainBarInput"
+                                                     required="true"/><br /><br />
+                                        <h:message for="password" />
+                            <p>
+                                <h:outputText value="#{login.message}"/> <br />
+                                <h:commandButton value="LOGGA IN" styleClass="mainConfirm" action="#{login.authenticate}"></h:commandButton>                                
+                            </p>
+                        </h:form>
+                    </article>
+                    
+                </div>
+            </section>
+        </div>
+
+        <ui:include src="WEB-INF/rightBar.xhtml" />
+        <ui:include src="WEB-INF/footer.xhtml" />
+    </div>
+</body>
+</html>

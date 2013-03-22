@@ -1,0 +1,101 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:c="http://java.sun.com/jsp/jstl/core"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html">
+<head>
+    <link href="client/CSS/syle.css" rel="Stylesheet" type="text/css" />
+            <script type="text/javascript" src="client/js/lib/jquery-1.8.1.min.js"></script>
+        <script type="text/javascript" src="client/js/gui/sitefunctions.js"></script>
+    <title>Ny användare</title>
+</head>
+<body>
+    <ui:include src="WEB-INF/header.xhtml" />
+    <div id="mainWrapper">
+        <div id="mainContent">
+            <section class="mainBar">
+                <div class="mainBarHead">Ny MusikBlogare</div>
+                <div class="mainBarContent">
+                        <h:form>
+                            Bloggnamn:<br />
+                                    
+                                        <h:inputText label="bname"
+                                                     id="bname" value="#{flash.keep.bname}"
+                                                     styleClass="mainBarInput"
+                                                     required="true"/>
+                                        <h:message for="bname" style="color:red;" />
+                                        <br /><br />
+                            Förnamn:<br />
+                                    
+                                        <h:inputText label="fname"
+                                                     id="fname" value="#{flash.keep.fname}"
+                                                     styleClass="mainBarInput"
+                                                     required="true"/>
+                                        <h:message for="fname" style="color:red;" />
+                                    <br /><br />
+
+                            Efternamn:<br />
+                                  
+                                        <h:inputText label="ename"
+                                                     id="ename" value="#{flash.keep.ename}"
+                                                     styleClass="mainBarInput"
+                                                     required="true"/>
+                                        <h:message for="ename" style="color:red;" />
+                                   <br /><br />
+                            
+                           <hr color="white" width="630" />
+                            <br />
+                                   
+                            Email:<br />
+                            
+
+                                 
+                                        <h:inputText label="email"
+                                                     id="email" value="#{flash.keep.email}"
+                                                     styleClass="mainBarInput"
+                                                     required="true"/>
+                                        <h:message for="email" style="color:red;" />
+                                  <br /><br />
+
+                            Bildlänk (VALFRITT):<br />
+                                 
+                                        <h:inputText label="profilePic"
+                                                     id="profilePic" value="#{flash.keep.profilePic}"
+                                                     styleClass="mainBarInput"
+                                                     required="false"/>
+                                        <h:message for="profilePic" style="color:red;" />
+                                  <br /><br />
+                            
+                                  <hr color="white" width="630" /><br />
+                                        
+                            Lösenord:<br />
+                                       
+                                        <h:inputSecret label="password"
+                                                     id="password" value="#{flash.keep.password}"
+                                                     styleClass="mainBarInput"
+                                                     required="true"/>
+                                        <h:message for="password" style="color:red;" />
+                                        <br /><br />
+                            Upprepa Lösenord:<br />
+                                
+                                        <h:inputSecret label="password2"
+                                                     id="password2" value="#{flash.keep.password2}"
+                                                     styleClass="mainBarInput"
+                                                     required="true"/>
+                                        <h:message for="password2" style="color:red;" />
+                                 <br /><br />
+                       
+                            <p>
+                                <h:commandButton value="REGISTRERA" action="#{register.addBlog}" styleClass="mainConfirm"></h:commandButton>
+                                <h:outputText value="#{register.message}"/>
+                            </p>
+                        </h:form>
+                </div>
+            </section>
+        </div>
+
+        <ui:include src="WEB-INF/rightBar.xhtml" />
+        <ui:include src="WEB-INF/footer.xhtml" />
+    </div>
+</body>
+</html>
