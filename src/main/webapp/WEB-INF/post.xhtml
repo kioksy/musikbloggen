@@ -15,9 +15,7 @@
                 </div>
                 <div>
                         <header>
-                            <c:if test="#{login.me(thispost.blogerId)}">
-                                <h:commandLink value="x" action="#{post.deletePost(thispost)}" onclick="alert('Inlägget är nu borttaget');" style="float:right;"/>
-                            </c:if>
+                            
                             <h:commandLink action="#{postForward.actionListener(thispost)}" >
                                 <h1>
                                     <h:outputText value="#{thispost.title}" />

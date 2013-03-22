@@ -87,12 +87,5 @@ public class postBB implements Serializable{
         return posts;    
         }
     
-        @Inject
-        public String deletePost(Post post){
-         MusikBlogg.INSTANCE.getQp().deletePost(post.getId());
-         /*Blog user;
-         user = MusikBlogg.INSTANCE.getBc().find(post.getBlogerId());
-         MusikBlogg.INSTANCE.getBc().update(user);*/
-         return "minblog?faces-redirect=true";
-        }
+        
 }
