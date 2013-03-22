@@ -84,3 +84,7 @@ post (you must type the name of the post correctly) and not search for bloggers.
 
 ##Javadoc
 We also included javadoc for easier understanding of the classes
+
+The javadoc can be found in [https://github.com/kioksy/musikbloggen/target/site/apidocs](target/site/apidocs)
+
+###Cheers
