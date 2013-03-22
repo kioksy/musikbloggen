@@ -6,7 +6,12 @@ package com.mycompany.musikbloggen.musikbloggenBBs;
 
 import com.mycompany.musikbloggen.Blog;
 import com.mycompany.musikbloggen.MusikBlogg;
+import java.io.IOException;
 import java.io.Serializable;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.enterprise.context.ConversationScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.context.Flash;
@@ -123,8 +128,9 @@ public class editProfileBB implements Serializable {
         this.blog.getOwner().setFirstName(this.firstName);
         this.blog.getOwner().setLastName(this.lastName);
         this.blog.getOwner().setIsAdmin(this.isAdmin);
+        if(testUrl(image)){
         this.blog.getOwner().setProfilePic(this.image);
-        
+        }
         MusikBlogg.INSTANCE.getBc().update(this.blog);
         return "minblog?faces-redirect=true";
     }
@@ -152,6 +158,26 @@ public class editProfileBB implements Serializable {
             return "editprofile?faces-redirect=true";
         }
     }
+    
+    private Boolean testUrl(String s){
+        try {
+            URL u = new URL (s); 
+            HttpURLConnection huc =  (HttpURLConnection) u.openConnection();
+            huc.setRequestMethod("GET"); 
+            huc.connect(); 
+            huc.getResponseCode();
+            int code = huc.getResponseCode();
+            if(code == 200){
+                return true;
+            }else{
+                return false;
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(RegisterBB.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+
 
     public editProfileBB() {
     }

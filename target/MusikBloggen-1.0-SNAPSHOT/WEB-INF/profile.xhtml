@@ -21,7 +21,14 @@
                         </div>
                         <div class="mainBarContent">
                             <header>
+                                <c:choose>
+                                <c:when test="#{empty blog.owner.profilePic}">
+                                <img src="client/images/Default-Avatar.jpg" width="140" style="float:left; margin: 0px 5px 5px 0px"/>
+                                </c:when>
+                                    <c:otherwise>
                                 <img src="#{blog.owner.profilePic}" width="140" style="float:left; margin: 0px 5px 5px 0px"/>
+                                    </c:otherwise>
+                                </c:choose>
                             </header>
                             <p>
                                 <b style="margin-right:10px;">Owner:</b> <h:outputText value="#{blog.owner.firstName}"/><h:outputText value="&#160;" />

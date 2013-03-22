@@ -94,9 +94,7 @@ public class RegisterBB implements Serializable {
             blog.getOwner().setFirstName(fname);
             blog.getOwner().setLastName(ename);
             blog.getOwner().setEmail(email);
-            if(profilePic == null || profilePic.equals("") || !testUrl(profilePic)){
-                blog.getOwner().setProfilePic("client/images/Default-Avatar.jpg");
-            }else{
+            if(testUrl(profilePic)){
                 blog.getOwner().setProfilePic(profilePic);
             }
             blog.setPassword(password); 
