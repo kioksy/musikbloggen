@@ -72,4 +72,8 @@ We choosed to use backing beans and each bean solves a smaller problem.
 - PostBB.java : handles a blog post.
 - PostForwardBB.java: forwarding bean with actionlistener to find clicked post.
 
+####Database
+All our inserts are handeld with JDBC but we have also used som plain SQL for presenting different results that our
+AbstractDAO couldn't handle.
 
+##UML
