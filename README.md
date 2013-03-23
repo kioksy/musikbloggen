@@ -47,7 +47,7 @@ Since this is only in alpha-stage there is only simple bloggers and no admins. E
 In theese pages you get the front-end part of the webpage
 
 ####com.mycompany.musikbloggen
-here we have our main javafiles.
+This package contains the main java files for the system.
 
 - AbstractDAO.java: Is our abstract data access object which handles methods like add, delete, find, getall etc.
 - IDAO.java: Interface for the data access object
@@ -59,7 +59,8 @@ here we have our main javafiles.
 - QueryProcessor.java: Here we created some querys with SQL that our AbstractDAO couldn't handle.
 
 ####com.mycompany.musikbloggenBBs
-We choosed to use backing beans and each bean solves a smaller problem.
+This package contains all the backing beans we made for all different types of problems.
+One bean never solves more than a few things.
 
 - BlobBB.java : backing bean for getting all blogs and also getting latest members.
 - BlogCatalogueBean.java: getting latest blogs and also posibility for special interval.
@@ -72,8 +73,8 @@ We choosed to use backing beans and each bean solves a smaller problem.
 - PostForwardBB.java: forwarding bean with actionlistener to find clicked post.
 
 ####Database
-All our inserts are handeld with JDBC but we have also used som plain SQL for presenting different results that our
-AbstractDAO couldn't handle.
+All our inserts are handeld with JDBC but we were forced to use some plain SQL for presenting different results that our
+AbstractDAO couldn't handle. Therefore we included a queryprocessor (Queryprocessor.java) that takes care of this.
 
 ##Strong and week parts
 The strongest part with MusikBloggen is that we made a really beautiful integration between spotify lists and the website.
